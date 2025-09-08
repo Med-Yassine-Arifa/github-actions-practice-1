@@ -1,7 +1,14 @@
 name: Practice 3 - Event Filters
 
 on:
+  workflow_dispatch:
   push:
+    branches:
+      - dev
+      - 'release/*'
+    paths-ignore:
+      - 'docs/**'
+  pull_request:
     branches:
       - dev
       - 'release/*'
@@ -15,4 +22,3 @@ jobs:
     steps:
       - name: Show success message
         run: echo "Event filters working! Triggered on ${{ github.ref_name }} branch by ${{ github.event_name }} event"
-
