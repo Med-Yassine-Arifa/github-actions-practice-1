@@ -1,11 +1,7 @@
 name: Event Name Detector
 
 on:
-  workflow_dispatch: {}
-  push:
-    branches: ["**"]
-  pull_request:
-    types: [opened, synchronize, reopened, edited, closed]
+  [workflow_dispatch, push, pull_request]
 
 jobs:
   echo:
