@@ -48,8 +48,3 @@ jobs:
           echo "DATABASE_URL env: ${{ env.DATABASE_URL }}"
           echo "API key configured: ${{ secrets.TEST_API_KEY != '' && 'YES' || 'NO' }}"
           echo "Database URL starts with 'postgresql': ${{ startsWith(secrets.DATABASE_URL, 'postgresql') }}"
-
-  logic-operations:
-    needs: context-explorer
-    runs-on: ubuntu-latest
-    steps:
